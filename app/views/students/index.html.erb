@@ -1,0 +1,28 @@
+
+<div class="container-fluid w-50">
+    <h3 class="ps-4 mt-3">Welcome to Student Management System</h3>
+    <%= link_to 'New Student', new_student_path, class:"btn btn-success p-1 mb-2"%>
+    <% @student.each do |student| %>
+    <div class="card mb-2" style="width: 38rem;">
+  <div class="card-header d-flex justify-content-between bg-secondary text-light">
+    <div>
+        <strong>Full Name: </strong> <%= student.first_name %> <%= student.last_name %>
+    </div>
+    <div>
+        <%= link_to '✏️', edit_student_path(student), class:'btn btn-secondary'%>
+        <%= link_to 'X',student, data: {turbo_method: :delete, turbo_confirm: "Are You sure?"}, class:"btn btn-danger"%>
+    </div>
+
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item"><strong>Email: </strong><%=student.email%></li>
+    <li class="list-group-item"><strong>Age: </strong><%=student.age%></li>
+    <li class="list-group-item"><strong>Class: </strong><%=student.semester%></li>
+  </ul>
+  <div class="card-footer text-body-secondary text-center">
+    <%= link_to 'Details',student, class: 'btn btn-dark w-100' %>
+  </div>
+</div>
+<% end %>
+</div>
+

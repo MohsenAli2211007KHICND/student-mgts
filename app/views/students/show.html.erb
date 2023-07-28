@@ -1,0 +1,22 @@
+
+<div class="container-fluid w-50">
+    <h1>Student Details</h1>
+    <%= link_to 'Back', students_path, class: 'btn btn-primary mb-2'%>
+    <div class="card mb-2" style="width: 38rem;">
+  <div class="card-header d-flex justify-content-between bg-info">
+    <div>
+        <strong>Full Name: </strong> <%= @student.first_name%> <%= @student.last_name %>
+    </div>
+    <div>
+       <%= link_to '✏️', edit_student_path(@student), class:'btn btn-secondary'%>
+       <%= link_to 'X',@student, data: {turbo_method: :delete, turbo_confirm: "Are You sure?"}, class:"btn btn-danger"%>
+    </div>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item"><strong>Email: </strong><%=@student.email%></li>
+    <li class="list-group-item"><strong>Age: </strong><%=@student.age%></li>
+    <li class="list-group-item"><strong>Class: </strong><%=@student.semester%></li>
+  </ul>
+</div>
+</div>
+

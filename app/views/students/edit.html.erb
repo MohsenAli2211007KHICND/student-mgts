@@ -1,0 +1,18 @@
+
+<div class="form-group container-fluid w-50">
+ <h1>Update Student</h1>
+<%= form_with model: @student do |form| %>
+<%= form.label :first_name %>
+<%= form.text_field :first_name, class:"form-control p-2 mb-2"  %>
+<%= form.label :last_name %>
+<%= form.text_field :last_name, class:"form-control p-2 mb-2"  %>
+<%= form.label :email %>
+<%= form.email_field :email, class:"form-control p-2 mb-2"  %>
+<%= form.label :age%>
+<%= form.number_field :age, class:"form-control p-2 mb-2"  %>
+<%= form.label :Class %>
+<%= form.text_field :semester, class:"form-control p-2 mb-2" %>
+<%= form.submit class:"btn btn-success"%>
+<%= link_to 'Cancel', students_path, class:"btn btn-secondary"%>
+<% end %>
+</div>
